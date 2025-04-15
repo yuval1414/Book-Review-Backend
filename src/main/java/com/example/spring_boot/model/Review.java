@@ -15,18 +15,18 @@ public class Review {
     private String bookName;
     @Indexed
     private String username;
-    private String comment;
+    private String review;
     @Indexed
     private int rating;
     private boolean containsSpoilers;
 
 
 
-    public Review(String bookId, String bookName, String username, String comment, int rating, boolean containsSpoilers ){
+    public Review(String bookId, String bookName, String username, String review, int rating, boolean containsSpoilers ){
         this.bookId = bookId;
         this.bookName = bookName;
         this.username = username;
-        this.comment = comment;
+        this.review = review;
         this.rating = rating;
         this.containsSpoilers = containsSpoilers;
     }
@@ -55,12 +55,12 @@ public class Review {
         this.username = username;
     }
 
-    public String getComment() {
-        return comment;
+    public String getReview() {
+        return review;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setReview(String review) {
+        this.review = review;
     }
 
     public int getRating() {

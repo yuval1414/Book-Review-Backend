@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/reviews")
@@ -25,6 +26,10 @@ public class ReviewController {
     @GetMapping("/user/{username}")
     public List<Review> getReviewByUsername(@PathVariable String username){
         return reviewService.getReviewByUsername(username);
+    }
+    @GetMapping("/user/myReviews/{username}")
+    public List<Map<String, Object>> getReviewAndBookByUsername(@PathVariable String username){
+        return reviewService.getReviewAndBookByUsername(username);
     }
     @GetMapping("/rating/{rating}")
     public List<Review> getReviewByRating(@PathVariable int rating){

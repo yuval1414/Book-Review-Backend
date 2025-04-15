@@ -86,7 +86,7 @@ public class Book {
     }
 
     public double getRating() {
-        return pagesNumber;
+        return rating;
     }
 
     public void setRating(double rating) {

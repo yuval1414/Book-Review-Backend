@@ -42,8 +42,9 @@ public class BookService {
     }
 
     public Book getBookByTitle(String title){
-        Book book = bookRepository.getBookByTitle(title);
-        if(book.getTitle() == null){
+        Book book = null;
+        book = bookRepository.findByTitleIgnoreCase(title);
+        if (book == null) {
             throw new DuplicateKeyException("book doesn't exists");
         }
         return book;
